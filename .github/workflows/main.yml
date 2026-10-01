@@ -39,6 +39,9 @@ jobs:
       - name: Build ResumeCraft
         run: npm run build
 
+      - name: Fix React Router for GitHub Pages
+        run: cp dist/index.html dist/404.html
+
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v6
 
@@ -50,4 +53,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
-        
